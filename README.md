@@ -23,4 +23,4 @@ services:
       restart_policy:
         condition: unless-stopped
 ```
-2. Run `docker compose up -d` to download the image and start it
+2. Run `docker-compose up -d` to download the image and start it
