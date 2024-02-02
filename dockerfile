@@ -1,9 +1,14 @@
 # syntax=docker/dockerfile:1
 FROM ubuntu:jammy
 
-COPY setup.sh /
-RUN chmod +x setup.sh
-RUN ./setup.sh
+COPY extract.sh /
+
+RUN apt-get update && apt-get install -y wget bzip2
+
+RUN wget https://downloads.getmonero.org/linux64
+
+RUN chmod +x extract.sh
+RUN ./extract.sh
 
 EXPOSE 18080
 EXPOSE 18081

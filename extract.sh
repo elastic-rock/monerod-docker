@@ -1,9 +1,5 @@
 #!/bin/bash
 
-apt-get update && apt-get install -y wget bzip2
-
-wget https://downloads.getmonero.org/linux64
-
 archive="linux64"
 
 folder_inside=$(tar -tjf "$archive" | grep -o '^[^/]\+' | head -n 1)
